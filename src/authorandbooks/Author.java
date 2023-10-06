@@ -33,6 +33,9 @@ public class Author {
         return gender;
     }
 
+    public List<Book> getBooks() {
+        return books;
+    }
 
     public void addBook(Book book) {
         books.add(book);

@@ -40,9 +40,6 @@ public class Faktura {
         Fakturadato = fakturadato;
     }
 
-    public void setFakturanr(int fakturanr) {
-        Fakturanr = fakturanr;
-    }
 
     public void setForfaldsdato(Date forfaldsdato) {
         Forfaldsdato = forfaldsdato;
@@ -54,20 +51,22 @@ public class Faktura {
     }
 
     public double getSubtotal() {
+        subtotal = 0;
+        for (int i = 0; i < fakturaLinjer.size(); i++) {
+            subtotal += fakturaLinjer.get(i).getBeløb();
+
+        }
+
         return subtotal;
     }
 
-    public void setSubtotal(int subtotal) {
-        this.subtotal = subtotal;
+
+    public double getMoms() {
+      return getSubtotal()* 0.25;
     }
 
-    public double moms() {
-        double mums = subtotal * 0.25;
-        return mums;
-    }
-
-    public double Fakturatotal() {
-        double subtotal1 = subtotal + mums;
+    public double getFakturatotal() {
+        double subtotal1 = subtotal + getMoms();
         return subtotal1;
 
     }
@@ -81,8 +80,9 @@ public class Faktura {
                 ", fakturaudsteder=" + fakturaudsteder +
                 ", fakturamodtager=" + fakturamodtager +
                 ", fakturaLinjer=" + fakturaLinjer +
-                ", subtotal=" + subtotal +
-                ", mums=" + mums +
+                ", subtotal=" + getSubtotal() +
+                ", mums=" + getMoms() +
                 '}';
     }
 }
+

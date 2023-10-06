@@ -30,6 +30,8 @@ public class TestProgram {
         vehicle.add(ship);
 
 
+
+
         for (int i = 0; i < vehicle.size(); i++) {
             if (vehicle.get(i) instanceof Car)
                 System.out.println("Car");

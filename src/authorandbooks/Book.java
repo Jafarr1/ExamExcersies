@@ -25,4 +25,12 @@ public class Book {
         return numPages;
     }
 
+    @Override
+    public String toString() {
+        return "Book{" +
+                "title='" + title + '\'' +
+                ", author=" + author +
+                ", numPages=" + numPages +
+                '}';
     }
+}

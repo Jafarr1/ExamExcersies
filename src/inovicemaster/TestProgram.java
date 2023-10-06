@@ -9,11 +9,11 @@ public class TestProgram {
     }
 
     private void run() {
-        // Create faktura udsteder and modtager
+
         InvoiceParticipant udsteder = new InvoiceParticipant("Udsteder Navn", "Udsteder Adresse");
         InvoiceParticipant modtager = new InvoiceParticipant("Modtager Navn", "Modtager Adresse");
 
-        // Create a faktura
+
         Faktura faktura = new Faktura(123, udsteder, modtager);
         faktura.setFakturadato(new Date());
         faktura.setForfaldsdato(new Date());
@@ -24,10 +24,19 @@ public class TestProgram {
         faktura.tilføjFakturaLinje(linje1);
         faktura.tilføjFakturaLinje(linje2);
 
-        // Calculate totals
         faktura.getSubtotal();
 
-        // Print faktura information
+
         System.out.println(faktura);
+        System.out.println(faktura.getFakturadato());
+        System.out.println(faktura.getFakturanr());
+        System.out.println(faktura.getForfaldsdato());
+        System.out.println(faktura.getSubtotal());
+        System.out.println(faktura.getMoms());
+        System.out.println(faktura.getFakturatotal());
+
+
+
     }
+
 }

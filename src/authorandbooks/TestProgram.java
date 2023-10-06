@@ -25,6 +25,13 @@ public class TestProgram {
         System.out.print("Book title:" + book2.getTitle());
         System.out.print("Book numPages:" + book2.getNumPages());
 
+        author1.addBook(book1);
+        author1.addBook(book2);
+
+        System.out.println(author1);
+        System.out.println(author1.getBooks());
+
+
 
 
 
